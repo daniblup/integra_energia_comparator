@@ -18,6 +18,7 @@ gem 'devise-i18n'
 gem 'sendgrid'
 gem 'simple_form'
 gem 'thin'
+gem 'rails_admin'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil

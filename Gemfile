@@ -15,7 +15,6 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise-i18n'
-gem 'mysql2'
 gem 'sendgrid'
 gem 'simple_form'
 gem 'thin'
@@ -26,8 +25,10 @@ group :development do
   gem 'rails_layout'
 end
 group :development, :test do
+  gem 'mysql2'
   gem 'rubocop'
 end
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
 end

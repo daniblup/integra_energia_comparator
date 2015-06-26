@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= stylesheet_link_tag "pdf" -%>
+  </head>
+  <body onload='number_pages'>
+    <div id="header">
+      <%= image_tag 'https://placehold.it/500x500.png' %>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

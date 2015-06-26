@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Comparatives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Current cost</th>
+      <th>Integra cost</th>
+      <th>Installation cost</th>
+      <th>Amortization term</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comparatives.each do |comparative| %>
+      <tr>
+        <td><%= comparative.current_cost %></td>
+        <td><%= comparative.integra_cost %></td>
+        <td><%= comparative.installation_cost %></td>
+        <td><%= comparative.amortization_term %></td>
+        <td><%= link_to 'Show', comparative %></td>
+        <td><%= link_to 'Edit', edit_comparative_path(comparative) %></td>
+        <td><%= link_to 'Destroy', comparative, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comparative', new_comparative_path %>

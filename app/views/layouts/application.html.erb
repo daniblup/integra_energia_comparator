@@ -14,7 +14,13 @@
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
-       <%= yield %>
+       <div class="container">
+	       <div class="row">
+				<div class="col-md-12">
+	       			<%= yield %>
+	       		</div><!--Cierro col12-->
+	       </div><!--Cierro row-->
+       </div><!--Cierro container-->
     </main>
   </body>
 </html>

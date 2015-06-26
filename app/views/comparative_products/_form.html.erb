@@ -1,0 +1,25 @@
+<%= form_for(@comparative_product) do |f| %>
+  <% if @comparative_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comparative_product.errors.count, "error") %> prohibited this comparative_product from being saved:</h2>
+
+      <ul>
+      <% @comparative_product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :hours_use %><br>
+    <%= f.number_field :hours_use %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

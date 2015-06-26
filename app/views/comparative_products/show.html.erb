@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @comparative_product.amount %>
+</p>
+
+<p>
+  <strong>Hours use:</strong>
+  <%= @comparative_product.hours_use %>
+</p>
+
+<%= link_to 'Edit', edit_comparative_product_path(@comparative_product) %> |
+<%= link_to 'Back', comparative_products_path %>

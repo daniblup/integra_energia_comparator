@@ -1,0 +1,33 @@
+<%= form_for(@comparative) do |f| %>
+  <% if @comparative.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comparative.errors.count, "error") %> prohibited this comparative from being saved:</h2>
+
+      <ul>
+      <% @comparative.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :current_cost %><br>
+    <%= f.number_field :current_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :integra_cost %><br>
+    <%= f.number_field :integra_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :installation_cost %><br>
+    <%= f.number_field :installation_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :amortization_term %><br>
+    <%= f.text_field :amortization_term %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

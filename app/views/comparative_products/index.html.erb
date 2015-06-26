@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Comparative Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Hours use</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comparative_products.each do |comparative_product| %>
+      <tr>
+        <td><%= comparative_product.amount %></td>
+        <td><%= comparative_product.hours_use %></td>
+        <td><%= link_to 'Show', comparative_product %></td>
+        <td><%= link_to 'Edit', edit_comparative_product_path(comparative_product) %></td>
+        <td><%= link_to 'Destroy', comparative_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comparative product', new_comparative_product_path %>

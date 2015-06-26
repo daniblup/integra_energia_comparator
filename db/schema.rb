@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625184507) do
+ActiveRecord::Schema.define(version: 20150626201545) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",        limit: 255
@@ -34,16 +34,13 @@ ActiveRecord::Schema.define(version: 20150625184507) do
   add_index "comparatives", ["client_id"], name: "fk_rails_36cf282c5c", using: :btree
 
   create_table "comparatives_products", force: :cascade do |t|
+    t.integer  "comparative_id", limit: 4
+    t.integer  "product_id",     limit: 4
     t.integer  "amount",         limit: 4
     t.integer  "hours_use",      limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "comparative_id", limit: 4
-    t.integer  "product_id",     limit: 4
   end
-
-  add_index "comparatives_products", ["comparative_id"], name: "fk_rails_4b5e54ff1e", using: :btree
-  add_index "comparatives_products", ["product_id"], name: "fk_rails_ef0d721d33", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name",                limit: 255
@@ -75,6 +72,4 @@ ActiveRecord::Schema.define(version: 20150625184507) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "comparatives", "clients"
-  add_foreign_key "comparatives_products", "comparatives"
-  add_foreign_key "comparatives_products", "products"
 end

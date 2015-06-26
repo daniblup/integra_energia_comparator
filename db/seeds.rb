@@ -1,3 +1,6 @@
+User.create!([
+  {email: "dani@gmail.com", encrypted_password: "$2a$10$cbfu.a2LVfkVLyWh5T2LaeuehqbzZVNIHBlTr6mDKn3lnZtP1ergG", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, name: nil}
+])
 Client.create!([
   {email: "prueba@gmail.com", postal_code: "33209", phone_number: "690282066"}
 ])

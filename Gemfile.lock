@@ -188,6 +188,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    seed_dump (3.2.2)
+      activerecord (~> 4)
+      activesupport (~> 4)
     sendgrid (1.2.0)
       json
     simple_form (3.1.0)
@@ -247,6 +250,7 @@ DEPENDENCIES
   rails_layout
   rubocop
   sass-rails (~> 5.0)
+  seed_dump
   sendgrid
   simple_form
   spring

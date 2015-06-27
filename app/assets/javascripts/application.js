@@ -16,6 +16,29 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(document).ready(function (){ 
-
+$(document).ready(function (){
+	$("#siguiente_1").click(function(){
+		$("#paso_1").addClass("oculto");
+		$("#paso_2").removeClass("oculto");
+	});
+	
+	$("#anterior_2").click(function(){
+		$("#paso_1").removeClass("oculto");
+		$("#paso_2").addClass("oculto");
+	});
+	
+	$("#siguiente_2").click(function(){
+		$("#paso_2").addClass("oculto");
+		$("#paso_3").removeClass("oculto");
+	});
+	
+	$("#anterior_3").click(function(){
+		$("#paso_2").removeClass("oculto");
+		$("#paso_3").addClass("oculto");
+	});
+	
+	$("#siguiente_3").click(function(){
+		$("#paso_3").addClass("oculto");
+		$("#paso_4").removeClass("oculto");
+	});
 });

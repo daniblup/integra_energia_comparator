@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626201545) do
+ActiveRecord::Schema.define(version: 20150701180751) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",        limit: 255
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20150626201545) do
   end
 
   create_table "comparatives", force: :cascade do |t|
-    t.integer  "current_cost",      limit: 4
-    t.integer  "integra_cost",      limit: 4
-    t.integer  "installation_cost", limit: 4
+    t.float    "current_cost",      limit: 24
+    t.float    "integra_cost",      limit: 24
+    t.float    "installation_cost", limit: 24
     t.float    "amortization_term", limit: 24
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 20150626201545) do
     t.integer  "comparative_id", limit: 4
     t.integer  "product_id",     limit: 4
     t.integer  "amount",         limit: 4
-    t.integer  "hours_use",      limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.float    "hours_use",      limit: 24
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "products", force: :cascade do |t|

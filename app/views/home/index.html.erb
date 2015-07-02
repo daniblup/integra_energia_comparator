@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="/guardar_comparativa" method="POST">
 
 	<!--Datos del cliente-->
 	<div id="paso_1">
@@ -40,14 +40,18 @@
 					<th>Cantidad</th>
 					<th>Horas de uso</th>
 				</tr>
+				<%cont=1%>
 				<%@productos.each do |producto|%>
 					<tr>
 						<td><%=producto.name%></td>
-						<td><input name="cantidad" type="text"/></td>
-						<td><input name="horas_uso" type="text"/></td>
+						<td><input id="cantidad_producto_<%=cont%>" name="cantidad_<%=cont%>" type="text"/></td>
+						<td><input id="horas_producto_<%=cont%>" name="horas_uso_<%=cont%>" type="text"/></td>
 					</tr>
+					<%cont+=1%>
 				<%end%>
 			</table>
+			
+			<input id="numero_productos" type="hidden" value=<%=cont%>>
 			
 			<div class="col-md-2">
 				<div id="anterior_2" class="btn btn-lg btn-warning">Anterior</div>
@@ -67,25 +71,32 @@
 			<h1>Paso 3/4</h1>
 			<h2>Confirmación de datos</h2>
 			
+			<table class="table">
+				<tr>
+					<th>Nombre</th>
+					<th>Cantidad</th>
+					<th>Horas de uso</th>
+				</tr>
+				<%cont=1%>
+				<%@productos.each do |producto|%>
+					<tr id="mostrar_producto_<%=cont%>" class="oculto">
+						<td><%=producto.name%></td>
+						<td><span id="mostrar_cantidad_producto_<%=cont%>"></span></td>
+						<td><span id="mostrar_horas_producto_<%=cont%>"></span></td>
+					</tr>
+					<%cont+=1%>
+				<%end%>
+			</table>
+			
 			<div class="col-md-2">
 				<div id="anterior_3" class="btn btn-lg btn-warning">Anterior</div>
 			</div>
 			
 			<div class="col-md-offset-8 col-md-2">
-				<div id="siguiente_3" class="btn btn-lg btn-success bl_der">Guardar</div>
+				<button type="submit" class="btn btn-lg btn-success bl_der">Guardar</button>
 			</div>
 			
 		</div>
 	</div>
 	
 </form>
-
-<!--Resultado-->
-<div id="paso_4" class="oculto">
-	<div class="jumbotron">
-			
-			<h1>Paso 4/4</h1>
-			<h2>Tu ahorro</h2>
-		
-		</div>
-</div>

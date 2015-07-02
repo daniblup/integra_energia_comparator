@@ -1,0 +1,19 @@
+<!--Resultado-->
+<div>
+	<div class="jumbotron">
+		<h1>Paso 4/4</h1>
+		<h2>¡Este es tu ahorro!</h2>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">Datos</div>
+			<div class="panel-body">
+				<p>Ahorro anual = <%=@comparativa.current_cost - @comparativa.integra_cost%></p>
+				<p>Ahorro mensual = <%=((@comparativa.current_cost - @comparativa.integra_cost)/12).round(2)%></p>
+				<p>Coste de instalación = <%=@comparativa.installation_cost%></p>
+				<p>Plazo de amortización = <%=@comparativa.amortization_term%></p>
+			</div>
+		</div>
+		
+		<%=link_to "<div class='btn btn-lg btn-danger'>Empezar de nuevo</div>".html_safe, root_path%>
+	</div>
+</div>

@@ -30,15 +30,24 @@ $(document).ready(function (){
 	$("#siguiente_2").click(function(){
 		$("#paso_2").addClass("oculto");
 		$("#paso_3").removeClass("oculto");
+		
+		for (i=1;i<$("#numero_productos").val();i++)
+		{
+			if ($("#cantidad_producto_"+i).val()!="" && $("#horas_producto_"+i).val()!="")
+			{
+				$("#mostrar_producto_"+i).removeClass("oculto");
+				$("#mostrar_cantidad_producto_"+i).html($("#cantidad_producto_"+i).val());
+				$("#mostrar_horas_producto_"+i).html($("#horas_producto_"+i).val());
+			}
+			else
+			{
+				$("#mostrar_producto_"+i).addClass("oculto");
+			}
+		}
 	});
 	
 	$("#anterior_3").click(function(){
 		$("#paso_2").removeClass("oculto");
 		$("#paso_3").addClass("oculto");
-	});
-	
-	$("#siguiente_3").click(function(){
-		$("#paso_3").addClass("oculto");
-		$("#paso_4").removeClass("oculto");
 	});
 });

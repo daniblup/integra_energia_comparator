@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :comparatives
   resources :clients
   
+  post '/guardar_comparativa' => "home#guardar_comparativa"
+  
   # get "/pdf" => "pdfs#ejemplo"
 end
